@@ -53,7 +53,7 @@
 }
 .conjunto1_4{
     display: grid;
-    grid-template-columns: 300px minmax(0, 500px) minmax(300px, 1fr);
+    grid-template-columns: 300px minmax(0, 500px) minmax(500px, 1fr);
     align-items: start;
     gap: 20px;;
     justify-content: start;
@@ -64,8 +64,8 @@
 .conjunto1_4 .perfil_3 {
     grid-column: 3;
     justify-self: end;
+    max-width: 400px;
     width: 100%;
-    max-width: 300px;
 }
 .edit-perfil-form:not([hidden]) {
     display: flex;
@@ -125,9 +125,14 @@
     box-shadow: 2px 4px black;
     margin: 10px;
     border-radius: 5px;
-    border: black 3px double;
+    border: rgb(160, 160, 160) 1px solid;
     position: relative;
-    right: -100px;
+    right: -250px;
+    transition: 0.2s color gray;
+}
+.logout-link:active{
+    transform: translateY(4px);
+    box-shadow: 0 1px 2px #000;
 }
 .btn-folon{
     background-color: #00bf63;
@@ -177,14 +182,18 @@
 }
 .logout-btn{
     background-color: #00bf63;
-    border: black 3px double;
+    border: rgb(160, 160, 160) 1px solid;
     padding: 2px 5px;
     border-radius: 5px;
     box-shadow: 2px 4px black;
     transition: 0.2s color gray;
     position: relative;
-    right: 0px;
+    right: -5px;
     bottom: -1px;
+}
+.logout-btn:active{
+    transform: translateY(4px);
+    box-shadow: 0 1px 2px #000;
 }
 .botao{
     border: black 3px double;
@@ -209,13 +218,15 @@
 .logo {
     width: 80px;
     justify-self: start;
+    background-color: wheat;
+    border-radius: 100%;
 }
 .logo_2 {
     width: 80px;
     height: 80px;
     justify-self: start;
-    background-color: #000000;
-    border-radius: 25px 0px 0px 25px;
+    background-color: wheat;
+    border-radius: 100%;
 }
 .title {
     text-align: center;
@@ -628,15 +639,15 @@ tr.profição, .profição td{
     border-radius: transparent;
     border: transparent;
 }
-.perfil_3:open {
+.perfil_3[open] {
     background-color: #0ba84a;
     border-radius: 10px;
     max-width: 400px;
-    width: auto;
+    width: 100%;
     min-width: 100px;
     max-height: 1200px;
     height: auto;
-    min-height: 150px;
+    min-height: 130px;
     margin-top: 20px;
     justify-content: center;
     align-items: center;    
@@ -646,9 +657,9 @@ tr.profição, .profição td{
     justify-self: end;
     box-shadow: 2px 4px black;
 }
-.perfil_3:open .summary_4{
+.perfil_3[open] .summary_4{
     justify-self: start;
-    box-shadow: transparent;
+    box-shadow: 0px 1px 2px 2px black;
 } 
 .indicador{
     position: relative;
@@ -661,17 +672,123 @@ tr.profição, .profição td{
     margin: 10px;
 }
 .modo .texto{
-    max-width: 75px;
-    width: auto;
+    max-width: 125px;
+    width: 100%;
     min-width: 25px;
-    max-width: 50px;
-    width: auto;
-    min-width: 25px;
-    margin: 5px;
+    max-height: 25px;
+    height: 100%;
+    min-height: 10px;
+    margin-top: 5px;
+    margin: 3px;
     align-items: center;
     justify-content: center;
+    position: relative;
+    bottom: -15px;
+    border-radius: 10px;
+    box-shadow: 2px 4px black;
+}
+#pag.tema-escuro {
+    background-color: #1a1a1a;
+}
+#pag.tema-escuro .texto {
+    color: #ffffff;
+    border-color: #ffd700;
+}
+#pag.tema-escuro .apre2,
+#pag.tema-escuro .summary_2,
+#pag.tema-escuro .summary_3,
+#pag.tema-escuro .summary_4,
+#pag.tema-escuro .edit-perfil-btn,
+#pag.tema-escuro .save-perfil-btn,
+#pag.tema-escuro .logout-btn,
+#pag.tema-escuro .logout-link,
+#pag.tema-escuro .modo button {
+    background-color: #363636;
+}
+#pag.tema-escuro .perfil,
+#pag.tema-escuro .perfil_1,
+#pag.tema-escuro .perfil_2,
+#pag.tema-escuro .perfil_3[open],
+#pag.tema-escuro .edit-perfil-form:not([hidden]),
+#pag.tema-escuro .input-perfil {
+    background-color: #242424;
+}
+#pag.tema-escuro .btn-volta {
+    background-color: #1a1818;
+}
+#pag.tema-escuro .summary_4,
+#pag.tema-escuro .perfil_2 a {
+    color: #ffffff;
 }
 
+#pag.tema-cinza {
+    background-color: #a1a1a1;
+}
+#pag.tema-cinza .texto {
+    color: #ffffff;
+    border-color: #000000;
+}
+#pag.tema-cinza .apre2,
+#pag.tema-cinza .summary_2,
+#pag.tema-cinza .summary_3,
+#pag.tema-cinza .summary_4,
+#pag.tema-cinza .edit-perfil-btn,
+#pag.tema-cinza .save-perfil-btn,
+#pag.tema-cinza .logout-btn,
+#pag.tema-cinza .logout-link,
+#pag.tema-cinza .modo button {
+    background-color: #777777;
+}
+#pag.tema-cinza .perfil,
+#pag.tema-cinza .perfil_1,
+#pag.tema-cinza .perfil_2,
+#pag.tema-cinza .perfil_3[open],
+#pag.tema-cinza .edit-perfil-form:not([hidden]),
+#pag.tema-cinza .input-perfil {
+    background-color: #494848;
+}
+#pag.tema-cinza .btn-volta {
+    background-color: #000000;
+}
+#pag.tema-cinza .summary_4,
+#pag.tema-cinza .perfil_2 a {
+    color: #ffffff;
+}
+
+#pag.tema-claro {
+    background-color: #ffffff;
+}
+#pag.tema-claro .texto {
+    color: #000000;
+    border-color: #000000;
+}
+#pag.tema-claro .apre2,
+#pag.tema-claro .summary_2,
+#pag.tema-claro .summary_3,
+#pag.tema-claro .summary_4,
+#pag.tema-claro .edit-perfil-btn,
+#pag.tema-claro .save-perfil-btn,
+#pag.tema-claro .logout-btn,
+#pag.tema-claro .logout-link {
+    background-color: #00bf63;
+}
+#pag.tema-claro .perfil,
+#pag.tema-claro .perfil_1,
+#pag.tema-claro .perfil_2,
+#pag.tema-claro .perfil_3[open],
+#pag.tema-claro .edit-perfil-form:not([hidden]) {
+    background-color: #0ba84a;
+}
+#pag.tema-claro .btn-volta {
+    background-color: #279904;
+}
+#pag.tema-claro .modo button {
+    background-color: revert;
+}
+#pag.tema-claro .summary_4,
+#pag.tema-claro .perfil_2 a {
+    color: #000000;
+}
 /*Resposividade Para Celular*/
 @media (max-width: 700px){
     .apre{

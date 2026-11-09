@@ -159,3 +159,30 @@ if (EditarPerfilBtn && FormularioEditarPerfil && BotaoSalvarPerfil) {
         FormularioEditarPerfil.hidden = true;
     });
 }
+
+//===•===modo de luminosidade===•===//
+
+function aplicarTema(tema) {
+    let temas = ["claro", "cinza", "escuro"];
+    if (!temas.includes(tema)) {
+        tema = "claro";
+    }
+
+    document.body.classList.remove("tema-claro", "tema-cinza", "tema-escuro");
+    document.body.classList.add("tema-" + tema);
+    localStorage.setItem("tema", tema);
+}
+
+function modo_escuro() {
+    aplicarTema("escuro");
+}
+
+function modo_cinza() {
+    aplicarTema("cinza");
+}
+
+function modo_claro() {
+    aplicarTema("claro");
+}
+
+aplicarTema(localStorage.getItem("tema") || "claro");
