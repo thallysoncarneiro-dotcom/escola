@@ -218,14 +218,14 @@
 .logo {
     width: 80px;
     justify-self: start;
-    background-color: wheat;
+    background-color: white;
     border-radius: 100%;
 }
 .logo_2 {
     width: 80px;
     height: 80px;
     justify-self: start;
-    background-color: wheat;
+    background-color: white;
     border-radius: 100%;
 }
 .title {
@@ -687,107 +687,239 @@ tr.profição, .profição td{
     border-radius: 10px;
     box-shadow: 2px 4px black;
 }
-#pag.tema-escuro {
+body.tema-escuro {
     background-color: #1a1a1a;
+    color: #ffffff;
 }
-#pag.tema-escuro .texto {
+body.tema-escuro .texto {
     color: #ffffff;
     border-color: #ffd700;
 }
-#pag.tema-escuro .apre2,
-#pag.tema-escuro .summary_2,
-#pag.tema-escuro .summary_3,
-#pag.tema-escuro .summary_4,
-#pag.tema-escuro .edit-perfil-btn,
-#pag.tema-escuro .save-perfil-btn,
-#pag.tema-escuro .logout-btn,
-#pag.tema-escuro .logout-link,
-#pag.tema-escuro .modo button {
+body.tema-escuro .apre,
+body.tema-escuro .apre2,
+body.tema-escuro .apre3,
+body.tema-escuro .conjunto1_2,
+body.tema-escuro .conjunto1_3,
+body.tema-escuro .navegador nav,
+body.tema-escuro .bec_2,
+body.tema-escuro .info-espaço_escolar-main,
+body.tema-escuro .info-espaço_escolar,
+body.tema-escuro .p_mp1,
+body.tema-escuro .btn-inter,
+body.tema-escuro .btn-retorno,
+body.tema-escuro .btn-folon,
+body.tema-escuro .summary,
+body.tema-escuro .summary_2,
+body.tema-escuro .summary_3,
+body.tema-escuro .summary_4,
+body.tema-escuro .edit-perfil-btn,
+body.tema-escuro .save-perfil-btn,
+body.tema-escuro .logout-btn,
+body.tema-escuro .logout-link,
+body.tema-escuro .modo button,
+body.tema-escuro .title-2 {
     background-color: #363636;
 }
-#pag.tema-escuro .perfil,
-#pag.tema-escuro .perfil_1,
-#pag.tema-escuro .perfil_2,
-#pag.tema-escuro .perfil_3[open],
-#pag.tema-escuro .edit-perfil-form:not([hidden]),
-#pag.tema-escuro .input-perfil {
+body.tema-escuro .perfil,
+body.tema-escuro .perfil_1,
+body.tema-escuro .perfil_2,
+body.tema-escuro .perfil_3[open],
+body.tema-escuro .edit-perfil-form:not([hidden]),
+body.tema-escuro .input-perfil,
+body.tema-escuro .bec_1 {
     background-color: #242424;
 }
-#pag.tema-escuro .btn-volta {
+body.tema-escuro .bec_3 {
+    background-color: #242424;
+}
+body.tema-escuro .btn-volta,
+body.tema-escuro .btn-volta_2 {
     background-color: #1a1818;
 }
-#pag.tema-escuro .summary_4,
-#pag.tema-escuro .perfil_2 a {
+body.tema-escuro .summary_4,
+body.tema-escuro .perfil_2 a,
+body.tema-escuro .title-2 {
     color: #ffffff;
 }
-
-#pag.tema-cinza {
-    background-color: #a1a1a1;
+body.tema-escuro * {
+    color: #ffffff;
+    border-color: #ffd700;
 }
-#pag.tema-cinza .texto {
+body.tema-escuro button {
+    background-color: #363636;
+    border-color: #ffd700;
+}
+body.tema-escuro a.btn-volta,
+body.tema-escuro a.btn-volta_2,
+body.tema-escuro a.btn-inter,
+body.tema-escuro a.btn-retorno,
+body.tema-escuro a.btn-folon {
+    border-style: solid;
+}
+body.tema-escuro input::placeholder {
+    color: #cccccc;
+}
+
+body.tema-cinza {
+    background-color: #a1a1a1;
+    color: #ffffff;
+}
+body.tema-cinza .texto {
     color: #ffffff;
     border-color: #000000;
 }
-#pag.tema-cinza .apre2,
-#pag.tema-cinza .summary_2,
-#pag.tema-cinza .summary_3,
-#pag.tema-cinza .summary_4,
-#pag.tema-cinza .edit-perfil-btn,
-#pag.tema-cinza .save-perfil-btn,
-#pag.tema-cinza .logout-btn,
-#pag.tema-cinza .logout-link,
-#pag.tema-cinza .modo button {
+body.tema-cinza .apre,
+body.tema-cinza .apre2,
+body.tema-cinza .apre3,
+body.tema-cinza .conjunto1_2,
+body.tema-cinza .conjunto1_3,
+body.tema-cinza .navegador nav,
+body.tema-cinza .bec_2,
+body.tema-cinza .info-espaço_escolar-main,
+body.tema-cinza .info-espaço_escolar,
+body.tema-cinza .p_mp1,
+body.tema-cinza .btn-inter,
+body.tema-cinza .btn-retorno,
+body.tema-cinza .btn-folon,
+body.tema-cinza .summary,
+body.tema-cinza .summary_2,
+body.tema-cinza .summary_3,
+body.tema-cinza .summary_4,
+body.tema-cinza .edit-perfil-btn,
+body.tema-cinza .save-perfil-btn,
+body.tema-cinza .logout-btn,
+body.tema-cinza .logout-link,
+body.tema-cinza .modo button,
+body.tema-cinza .title-2 {
     background-color: #777777;
 }
-#pag.tema-cinza .perfil,
-#pag.tema-cinza .perfil_1,
-#pag.tema-cinza .perfil_2,
-#pag.tema-cinza .perfil_3[open],
-#pag.tema-cinza .edit-perfil-form:not([hidden]),
-#pag.tema-cinza .input-perfil {
+body.tema-cinza .perfil,
+body.tema-cinza .perfil_1,
+body.tema-cinza .perfil_2,
+body.tema-cinza .perfil_3[open],
+body.tema-cinza .edit-perfil-form:not([hidden]),
+body.tema-cinza .input-perfil,
+body.tema-cinza .bec_1 {
     background-color: #494848;
 }
-#pag.tema-cinza .btn-volta {
+body.tema-cinza .bec_3 {
+    background-color: #494848;
+}
+body.tema-cinza .btn-volta,
+body.tema-cinza .btn-volta_2 {
     background-color: #000000;
 }
-#pag.tema-cinza .summary_4,
-#pag.tema-cinza .perfil_2 a {
+body.tema-cinza .summary_4,
+body.tema-cinza .perfil_2 a,
+body.tema-cinza .title-2 {
     color: #ffffff;
 }
-
-#pag.tema-claro {
-    background-color: #ffffff;
+body.tema-cinza * {
+    color: #ffffff;
+    border-color: #333333;
 }
-#pag.tema-claro .texto {
+body.tema-cinza .texto {
+    border-color: #333333;
+}
+body.tema-cinza button {
+    background-color: #777777;
+    border-color: #333333;
+}
+body.tema-cinza input::placeholder {
+    color: #dddddd;
+}
+
+body.tema-claro {
+    background-color: #ffffff;
+    color: #000000;
+}
+body.tema-claro .texto {
     color: #000000;
     border-color: #000000;
 }
-#pag.tema-claro .apre2,
-#pag.tema-claro .summary_2,
-#pag.tema-claro .summary_3,
-#pag.tema-claro .summary_4,
-#pag.tema-claro .edit-perfil-btn,
-#pag.tema-claro .save-perfil-btn,
-#pag.tema-claro .logout-btn,
-#pag.tema-claro .logout-link {
+body.tema-claro .apre,
+body.tema-claro .apre2,
+body.tema-claro .btn-inter,
+body.tema-claro .btn-retorno,
+body.tema-claro .btn-folon,
+body.tema-claro .bec_2,
+body.tema-claro .info-espaço_escolar-main,
+body.tema-claro .info-espaço_escolar,
+body.tema-claro .p_mp1,
+body.tema-claro .summary,
+body.tema-claro .summary_2,
+body.tema-claro .summary_3,
+body.tema-claro .summary_4,
+body.tema-claro .edit-perfil-btn,
+body.tema-claro .save-perfil-btn,
+body.tema-claro .logout-btn,
+body.tema-claro .logout-link {
     background-color: #00bf63;
 }
-#pag.tema-claro .perfil,
-#pag.tema-claro .perfil_1,
-#pag.tema-claro .perfil_2,
-#pag.tema-claro .perfil_3[open],
-#pag.tema-claro .edit-perfil-form:not([hidden]) {
+body.tema-claro .perfil,
+body.tema-claro .perfil_1,
+body.tema-claro .perfil_2,
+body.tema-claro .perfil_3[open],
+body.tema-claro .edit-perfil-form:not([hidden]),
+body.tema-claro .bec_1 {
     background-color: #0ba84a;
 }
-#pag.tema-claro .btn-volta {
+body.tema-claro .btn-volta {
     background-color: #279904;
 }
-#pag.tema-claro .modo button {
+body.tema-claro .apre3 {
+    background-color: #ffd900;
+}
+body.tema-claro .conjunto1_2,
+body.tema-claro .conjunto1_3,
+body.tema-claro .title-2 {
+    background-color: #000000;
+}
+body.tema-claro .title-2 {
+    color: #fbff00;
+}
+body.tema-claro .btn-volta_2 {
+    background-color: #d9ff00;
+}
+body.tema-claro .navegador nav,
+body.tema-claro .bec_3 {
+    background-color: #c1ff72;
+}
+body.tema-claro .modo button {
     background-color: revert;
 }
-#pag.tema-claro .summary_4,
-#pag.tema-claro .perfil_2 a {
+body.tema-claro .summary_4,
+body.tema-claro .perfil_2 a {
     color: #000000;
+}
+
+body.tema-escuro .apre3,
+body.tema-cinza .apre3,
+body.tema-claro .apre3 {
+    background-color: #ffd900;
+}
+body.tema-escuro .conjunto1_2,
+body.tema-escuro .conjunto1_3,
+body.tema-escuro .title-2,
+body.tema-cinza .conjunto1_2,
+body.tema-cinza .conjunto1_3,
+body.tema-cinza .title-2,
+body.tema-claro .conjunto1_2,
+body.tema-claro .conjunto1_3,
+body.tema-claro .title-2 {
+    background-color: #000000;
+}
+body.tema-escuro .title-2,
+body.tema-cinza .title-2,
+body.tema-claro .title-2 {
+    color: #fbff00;
+}
+body.tema-escuro .btn-volta_2,
+body.tema-cinza .btn-volta_2,
+body.tema-claro .btn-volta_2 {
+    background-color: #d9ff00;
+    color: #000000;
+    border-color: #000000;
 }
 /*Resposividade Para Celular*/
 @media (max-width: 700px){

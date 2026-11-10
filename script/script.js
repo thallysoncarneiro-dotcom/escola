@@ -62,6 +62,10 @@ if (usuarioSalvo) {
     usuario = JSON.parse(usuarioSalvo);
 }
 
+if (document.body.id !== "login") {
+    aplicarTema(localStorage.getItem("tema") || "claro");
+}
+
 //===•===print===•===//
 let campoEmail = document.getElementById("print1");
 let campoNome = document.getElementById("print2");
@@ -184,5 +188,3 @@ function modo_cinza() {
 function modo_claro() {
     aplicarTema("claro");
 }
-
-aplicarTema(localStorage.getItem("tema") || "claro");
