@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Usuário | Escola Virtual</title>
-            <link rel="icon" href="documento_de_imagem.img/VOCE.png" type="image/png">
+            <link rel="icon" href="documento_de_imagem.img/VOCE.png" type="image/png" class="WORD">
             <link rel="stylesheet" href="style/style.css">
         </head>
         <body id="pag">
@@ -16,21 +16,23 @@
                 </div>
             </header>
             <div class="conjunto1_4">
+                <div class="perfil-container">
                 <details id="perfil" class="perfil">
                     <summary class="summary_2 texto">Meu Perfil<img src="documento_de_imagem.img/vocé(1).png" alt="Usuário" class="usuario-icon"></summary>
                         <p id="profile-intro" class="texto" hidden>Informações do usuário...</p>
                         <p class="print texto" id="print2">Nome:</p>
                         <p class="print texto" id="print1">Email:</p>
                         <p class="print texto" id="print3">Telefone:</p>
-                        <button id="edit-profile-btn" class="edit-perfil-btn texto">[✏️]</button>
-                        <form id="edit-profile-form" class="edit-perfil-form" hidden>
-                            <label for="name" class="indicador texto">Nome:</label>
-                            <input type="text" id="name" name="name" class="input-perfil texto">
-                            <label for="phone" class="indicador texto">Telefone:</label>
-                            <input type="tel" id="phone" name="phone" class="input-perfil texto">
-                            <button id="save-profile-btn" class="save-perfil-btn texto">Salvar</button>
-                        </form>
+                        <button id="edit-profile-btn" type="button" class="edit-perfil-btn texto">✏️</button>
                 </details>
+                <form id="edit-profile-form" class="edit-perfil-form" hidden>
+                    <label for="name" class="indicador texto">Nome:</label>
+                    <input type="text" id="name" name="name" class="input-perfil texto">
+                    <label for="phone" class="indicador texto">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" class="input-perfil texto">
+                    <button id="save-profile-btn" type="submit" class="save-perfil-btn texto">Salvar</button>
+                </form>
+                </div>
                 <details class="perfil_1">
                     <summary class="summary_3 texto">Dados do App</summary>
                     <ul>
@@ -61,7 +63,7 @@
                 </details>
                 <details class="perfil_3">
                     <summary class="summary_4">⚙️</summary>
-                        <button id="logout-btn" class="logout-btn texto">Sair</button>
+                        <button id="logout-btn" class="logout-btn texto" type="button">Sair</button>
                         <a href="login.html" class="logout-link texto">Ir para Login</a>
                         <nav class="modo">   
                             <button class="texto" onclick="modo_claro()">modo diurno☀️</button>

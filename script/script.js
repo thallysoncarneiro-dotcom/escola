@@ -12,20 +12,48 @@ let fotos2 = [
 function iniciarCarrossel(idFoto, idBotao, imagens) {
     let foto = document.getElementById(idFoto);
     let botao = document.getElementById(idBotao);
-    if (!foto || !botao) {
+    if (!foto || !botao || imagens.length === 0) {
         return;
     }
 
     let posicao = 0;
+    let fotoVisivel = false;
+    let paginaAtiva = true;
+    let intervalo = null;
     function avancarFoto() {
         posicao = (posicao + 1) % imagens.length;
         foto.src = imagens[posicao];
     }
 
+    function atualizarIntervalo() {
+        let deveAvancar = fotoVisivel && paginaAtiva && !document.hidden;
+        if (deveAvancar && intervalo === null) {
+            intervalo = setInterval(avancarFoto, 2000);
+        } else if (!deveAvancar && intervalo !== null) {
+            clearInterval(intervalo);
+            intervalo = null;
+        }
+    }
+
     botao.addEventListener("click", avancarFoto);
-    setInterval(function(){
-        avancarFoto();
-    }, 2000);
+
+    let observador = new IntersectionObserver(function(entradas) {
+        fotoVisivel = entradas.some(function(entrada) {
+            return entrada.isIntersecting;
+        });
+        atualizarIntervalo();
+    });
+    observador.observe(foto);
+
+    document.addEventListener("visibilitychange", atualizarIntervalo);
+    window.addEventListener("pagehide", function() {
+        paginaAtiva = false;
+        atualizarIntervalo();
+    });
+    window.addEventListener("pageshow", function() {
+        paginaAtiva = true;
+        atualizarIntervalo();
+    });
 }
 
 iniciarCarrossel("foto-carrossel-1", "botao-carrossel-1", fotos);
@@ -59,7 +87,29 @@ if (botao) {
 
 let usuarioSalvo = localStorage.getItem("usuario");
 if (usuarioSalvo) {
-    usuario = JSON.parse(usuarioSalvo);
+    try {
+        let usuarioLido = JSON.parse(usuarioSalvo);
+        if (usuarioLido && typeof usuarioLido === "object" && !Array.isArray(usuarioLido)) {
+            usuario = { ...usuario, ...usuarioLido };
+        } else {
+            console.error("Os dados salvos do usuário não têm um formato válido.");
+            localStorage.removeItem("usuario");
+        }
+    } catch (error) {
+        if (!(error instanceof SyntaxError)) {
+            throw error;
+        }
+        console.error("Não foi possível ler os dados salvos do usuário.", error);
+        localStorage.removeItem("usuario");
+    }
+}
+
+let botaoSair = document.getElementById("logout-btn");
+if (botaoSair) {
+    botaoSair.addEventListener("click", function() {
+        localStorage.removeItem("usuario");
+        window.location.href = "login.html";
+    });
 }
 
 if (document.body.id !== "login") {
@@ -139,23 +189,19 @@ if (perfil && introducaoPerfil) {
 //===•===editar perfil===•===//
 let EditarPerfilBtn = document.getElementById("edit-profile-btn");
 let FormularioEditarPerfil = document.getElementById("edit-profile-form");
-let BotaoSalvarPerfil = document.getElementById("save-profile-btn");
 let NomeInput = document.getElementById("name");
 let TelefoneInput = document.getElementById("phone");
-let SalvarPerfilBtn = document.getElementById("save-profile-btn");
 
-if (EditarPerfilBtn && FormularioEditarPerfil && BotaoSalvarPerfil) {
+if (EditarPerfilBtn && FormularioEditarPerfil && NomeInput && TelefoneInput) {
     EditarPerfilBtn.addEventListener("click", function() {
         FormularioEditarPerfil.hidden = !FormularioEditarPerfil.hidden;
+        if (!FormularioEditarPerfil.hidden) {
+            NomeInput.value = usuario.nome || "";
+            TelefoneInput.value = usuario.telefone || "";
+        }
     });
     FormularioEditarPerfil.addEventListener("submit", function(event) {
         event.preventDefault();
-    });
-    BotaoSalvarPerfil.addEventListener("click", function() {
-            NomeInput = document.getElementById("name");
-            TelefoneInput = document.getElementById("phone");
-    });
-    SalvarPerfilBtn.addEventListener("click", function() {
         usuario.nome = NomeInput.value.trim();
         usuario.telefone = TelefoneInput.value.trim();
         localStorage.setItem("usuario", JSON.stringify(usuario));
@@ -188,3 +234,34 @@ function modo_cinza() {
 function modo_claro() {
     aplicarTema("claro");
 }
+//===•===Configuração dos eventos.html===•===//
+const botoes = document.querySelectorAll(".aba-evento");
+const paineis = document.querySelectorAll(".painel-evento");
+
+botoes.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+        // Identifica o conteúdo escolhido
+        let alvo = botao.dataset.alvo;
+
+        // Desativa todos os botões
+        botoes.forEach(aba => {
+            aba.classList.remove("ativa");
+        });
+
+        // Esconde todos os conteúdos
+        paineis.forEach(painel => {
+            painel.classList.remove("ativo");
+        });
+
+        // Ativa o botão escolhido
+        botao.classList.add("ativa");
+
+        // Mostra o conteúdo correspondente
+        document.getElementById(alvo)
+            .classList.add("ativo");
+
+    });
+
+});
