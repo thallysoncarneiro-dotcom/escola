@@ -1189,7 +1189,7 @@ body.tema-claro .aba-evento.ativa {
     background-color: #00bf63;
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: 100%;
     border: 1px solid #00bf63;
     justify-self: end;
     align-self: start;
@@ -1198,10 +1198,42 @@ body.tema-claro .aba-evento.ativa {
     background-color: #ff0000;
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: 100%;
     border: 1px solid #ff0000;
     justify-self: end;
     align-self: start;
+}
+#janela-evento_1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+#janela-evento_1[hidden] {
+    display: none;
+}
+#janela-evento_2{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+#janela-evento_2[hidden] {
+    display: none;
 }
 
 /*Resposividade Para Celular*/

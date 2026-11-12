@@ -265,3 +265,17 @@ botoes.forEach(botao => {
     });
 
 });
+function mostrarEvento_1() {
+    document.getElementById("janela-evento_1").hidden = false;
+}
+
+function fecharEvento_1() {
+    document.getElementById("janela-evento_1").hidden = true;
+}
+function mostrarEvento_2() {
+    document.getElementById("janela-evento_2").hidden = false;
+}
+
+function fecharEvento_2() {
+    document.getElementById("janela-evento_2").hidden = true;
+}
